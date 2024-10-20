@@ -1,12 +1,16 @@
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 import CabinTable from "../features/cabins/CabinTable";
-import Button from "../ui/Button";
-import { useState } from "react";
-import CreateCabinForm from "../features/cabins/CreateCabinForm";
+import AddCabin from "./AddCabin";
+
+import { getCabins } from "../services/apiCabins";
+import { useQuery } from "@tanstack/react-query";
 
 function Cabins() {
-  const [showForm, setShowForm] = useState(false);
+  const { isPanding } = useQuery({
+    queryKey: ["cabins"],
+    queryFn: getCabins,
+  });
 
   return (
     <>
@@ -16,12 +20,7 @@ function Cabins() {
       </Row>
       <Row>
         <CabinTable />
-
-        <Button onClick={() => setShowForm((show) => !show)}>
-          Add new cabin
-        </Button>
-
-        {showForm && <CreateCabinForm />}
+        <AddCabin isPanding={isPanding} />
       </Row>
     </>
   );

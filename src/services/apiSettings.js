@@ -7,9 +7,11 @@ export async function getSettings() {
     console.error(error);
     throw new Error("Settings could not be loaded");
   }
+  // console.log(data);
+
   return data;
 }
-
+getSettings();
 // We expect a newSetting object that looks like {setting: newValue}
 export async function updateSetting(newSetting) {
   const { data, error } = await supabase

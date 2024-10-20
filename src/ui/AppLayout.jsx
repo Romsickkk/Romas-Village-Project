@@ -13,6 +13,10 @@ const StyledAppLayout = styled.div`
 const Main = styled.main`
   background-color: var(--color-grey-100);
   padding: 4rem 4.8rem 6.4rem;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Container = styled.div`
