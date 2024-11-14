@@ -40,7 +40,7 @@ function BookingRow({
     created_at,
     startDate,
     endDate,
-    numNights,
+    numberNights: numNights,
     numGuests,
     totalPrice,
     status,

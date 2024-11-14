@@ -5,6 +5,7 @@ import AddCabin from "./AddCabin";
 
 import { getCabins } from "../services/apiCabins";
 import { useQuery } from "@tanstack/react-query";
+import CabinTableOperations from "../features/cabins/CabinTableOperations";
 
 function Cabins() {
   const { isPanding } = useQuery({
@@ -16,7 +17,7 @@ function Cabins() {
     <>
       <Row type="horizontal">
         <Heading as="h1">All cabins</Heading>
-        <p>Filter / Sort</p>
+        <CabinTableOperations />
       </Row>
       <Row>
         <CabinTable />

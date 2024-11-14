@@ -105,11 +105,10 @@ function Toggle({ id }) {
 
 function List({ id, children }) {
   const { openId, position, close } = useContext(MenusContext);
-
   const ref = useRef();
-  console.log(openId);
 
-  useCloseModal(ref, close, true, openId === id);
+  useCloseModal(ref, close);
+
   if (openId !== id) return null;
 
   return createPortal(
