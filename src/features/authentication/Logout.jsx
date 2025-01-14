@@ -7,7 +7,6 @@ function Logout() {
   const { logout, isPending } = useLogout();
   return (
     <ButtonIcon disabled={isPending} onClick={logout}>
-      Logout
       <HiArrowRightOnRectangle />
     </ButtonIcon>
   );

@@ -15,8 +15,10 @@ const ErrorDiv = styled.div`
 `;
 
 function LoginForm() {
-  const [email, setEmail] = useState("roman.example@gmail.com");
-  const [password, setPassword] = useState("qwe123");
+  const [email, setEmail] = useState("");
+  //roman.example@gmail.com
+  const [password, setPassword] = useState("");
+  //qwe123
 
   const { login, isPending: isLoading, error } = useLogin();
 

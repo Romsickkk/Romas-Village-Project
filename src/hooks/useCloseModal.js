@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-export function useCloseModal(ref, outsideLcick, listenerCapturing = true) {
+export function useCloseModal(ref, outsideClick, listenerCapturing = true) {
   useEffect(() => {
     function handleClick(e) {
       if (ref.current && !ref.current.contains(e.target)) {
-        outsideLcick();
+        outsideClick();
       }
     }
 
@@ -12,5 +12,5 @@ export function useCloseModal(ref, outsideLcick, listenerCapturing = true) {
 
     return () =>
       document.removeEventListener("click", handleClick, listenerCapturing);
-  }, [outsideLcick]);
+  }, [outsideClick]);
 }
